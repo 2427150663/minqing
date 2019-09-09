@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <style type="text/css">
+        .zhi {
+            width: 0px;
+            height: 34px;
+            line-height: 34px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        input[type=date]::-webkit-inner-spin-button {
+            visibility: hidden;
+        }
+
+        #index {
+            padding-top: 27px;
+            background: #f8f8fb;
+            padding-bottom: 27px;
+        }
+
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-bottom: 16px;
+            padding-top: 32px;
+        }
+
+        #index h5 {
+            font-size: 12px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        #index .tit .tu {
+            padding-top: 24px;
+            padding-bottom: 12px;
+        }
+
+        #index .tit .t2 {
+            min-width: 1118px;
+            height: 335px;
+            background: #ffffff;
+            -webkit-box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            border-radius: 2px;
+            margin-top: 24px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #606266;
+            padding-left: 20px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index.open .tit .t2 {
+            min-width: 1260px;
+        }
+
+        #index .tit .t2 .ban {
+            margin-top: 16px;
+        }
+
+        #index .tit .t1 {
+            min-width: 1118px;
+            height: 96px;
+            background: #ffffff;
+            border-radius: 2px;
+            padding-left: 20px;
+            font-size: 14px;
+            margin-top: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #606266;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index.open .tit .t1 {
+            min-width: 1260px;
+        }
+
+        #index .tit .time {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        #index .tit .top {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+            line-height: 54px;
+        }
+
+        #index .tit .biao {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            line-height: 41px;
+        }
+
+        #index .tit .right {
+            padding-left: 24px;
+        }
+
+        #index .tit .banan {
+            padding-top: 16px;
+        }
+
+        #index .xiang .cun {
+            width: 74%;
+            min-width: 500px;
+            height: 34px;
+            line-height: 34px;
+            font-size: 18px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+        }
+
+        #index .xiang .cun span {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #00c9a2;
+            margin-left: 16px;
+        }
+
+        #index .xiang .btn {
+            min-width: 138px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #38b3ff;
+            text-align: center;
+            line-height: 34px;
+            margin-right: 24px;
+        }
+        #index .xiang .btn:nth-child(4){
+            margin-right: 0px;
+        }
+        #index .xiang .lan {
+            background: #38b3ff;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            color: #ffffff;
+        }
+
+        #conLeftTwo .tap:nth-child(3) .left {
+            border-left: 4px solid rgba(56, 179, 255, 1);
+        }
+
+        #conLeftTwo .tap:nth-child(3) .left img {
+            -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+        }
+
+        .btn:hover {
+            -webkit-filter: brightness(120%);
+            filter: brightness(120%);
+        }
+
+        .lan {
+            color: rgba(56, 179, 255, 1);
+        }
+
+        #index .tit .t3 {
+            height: 168px;
+        }
+
+        #index .tit .t3 div {
+            line-height: 34px;
+        }
+
+        #index .tit .t3 .top {
+            line-height: 54px;
+        }
+
+        #index .tit .t3 .lan {
+            margin-left: 127px;
+        }
+
+        #index .tit .t4 {
+            height: 553px;
+
+        }
+
+        #index .tit .t4 div {
+            line-height: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" style="position: relative;">
+        <nav>
+            <div class="con">
+                <div class="left">
+                    <img src="img/logo.png" width="101px" height="23px" class="tu1">
+                    <img src="img/menu@2x.png" width="20px" height="14px" class="tu2" id="open">
+                </div>
+                <div class="zhong">
+                    <span class="s1">康奈民情管理指挥系统</span>
+                    <span class="s2">——</span>
+                    <span class="s3">延安市互联网信息办公司</span>
+                </div>
+                <div class="right">
+                    <span class="s1">返回大厅</span>
+                    <span class="s2">|</span>
+                    <span class="s3">注销登录</span>
+                </div>
+            </div>
+        </nav>
+        <div id="con">
+            <div id="conLeft">
+                <div class="lie lie1">
+                    <div class="close" onclick="window.location.href='index.html'">
+                        <img src="img/home@2x.png">
+                        <span>首页</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie2">
+                        <div class="close">
+                            <img src="img/edit@2x.png">
+                            <span>走访管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='visit.html'">
+                                <span class="zflb">走访列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='plan.html'">
+                            <div class="zou">
+                                <span class="zflb">走访计划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie3">
+                    <div class="close bor" onclick="window.location.href='people.html'">
+                        <img src="img/user@2x.png">
+                        <span>民情管理</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie4">
+                        <div class="close">
+                            <img src="img/users@2x.png">
+                            <span>汇总统计</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='whole.html'">
+                                <span class="zflb">整体情况</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='statistical.html'">
+                            <div class="zou">
+                                <span class="zflb">民情统计</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='collect.html'">
+                            <div class="zou">
+                                <span class="zflb">机构采集排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='handle.html'">
+                            <div class="zou">
+                                <span class="zflb">机构办理排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='ofpeople.html'">
+                            <div class="zou">
+                                <span class="zflb">民情采集统计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie5">
+                        <div class="close">
+                            <img src="img/pie-chart@2x.png">
+                            <span>人员管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie" onclick="window.location.href='pelist.html'">
+                            <div class="zou">
+                                <span class="zflb">人员列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='activation.html'">
+                            <div class="zou ">
+                                <span class="zflb">激活码管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie6" onclick="window.location.href='management.html'">
+                    <div class="close">
+                        <img src="img/layers@2x.png">
+                        <span>机构管理</span>
+                    </div>
+                </div>
+                <div class="lie lie7" onclick="window.location.href='set.html'">
+                    <div class="close">
+                        <img src="img/settings@2x.png">
+                        <span>设置</span>
+                    </div>
+                </div>
+            </div>
+            <div id="conLeftTwo">
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/home@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='index.html'">
+                        首页
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/edit@2x.png">
+                    </div>
+                    <div class="right">
+                        走访管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='visit.html'">
+                        走访列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='plan.html'">
+                        走访计划
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/user@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='people.html'">
+                        民情管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/users@2x.png">
+                    </div>
+                    <div class="right">
+                        汇总统计
+                    </div>
+                    <div class="right right1" onclick="window.location.href='whole.html'">
+                        整体情况
+                    </div>
+                    <div class="right right2" onclick="window.location.href='statistical.html'">
+                        民情统计
+                    </div>
+                    <div class="right right3" onclick="window.location.href='collect.html'">
+                        机构采集排行
+                    </div>
+                    <div class="right right4" onclick="window.location.href='handle.html'">
+                        机构办理排行
+                    </div>
+                    <div class="right right5" onclick="window.location.href='ofpeople.html'">
+                        民情采集统计
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/pie-chart@2x.png">
+                    </div>
+                    <div class="right">
+                        人员管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='pelist.html'">
+                        人员列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='activation.html'">
+                        激活码管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/layers@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='management.html'">
+                        机构管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/settings@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='set.html'">
+                        设置
+                    </div>
+                </div>
+            </div>
+            <div id="conRight">
+                <div id="index">
+                    <h5>民情管理>民情详情</h5>
+                    <h1>民情管理</h1>
+                    <div class="xiang flex">
+                        <div class="cun">王义村群众吃水困难<span>已办结</span></div>
+                        <div class="btn lan">
+                            已办结
+                        </div>
+                        <div class="btn">
+                            催办
+                        </div>
+                        <div class="btn">
+                            PDF打印
+                        </div>
+                    </div>
+                    <div class="tit">
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                民情办已设置民情状态为已办结
+                            </div>
+                        </div>
+                        <div class="t2">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                办理人员：王二毛
+                            </div>
+                            <div class="banan">
+                                办案情况：经为乡通宵奋战,不懈努力,在2018年12月19日中午顺利将自来水通到了王义村，全村200户群众已用上自来水
+                            </div>
+                            <div class="tu flex" style="border-bottom: 1px solid rgba(228,231,237,1);">
+                                <div class="left">
+                                    <img src="img/分组 11@2x.png" width="109px" height="73px" />
+                                </div>
+                                <div class="right">
+                                    <div class="biao">
+                                        这是一个标题.jpg
+                                    </div>
+                                    <div class="bom">
+                                        <span>大小：2.0MB</span>
+                                        <span>上传时间：</span>
+                                        <span class="time">2018-12-12 12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tu video flex">
+                                <div class="left">
+                                    <video width="109px" height="73px" poster="img/分组 11@2x.png"
+                                        style="background:black;">
+                                        <source src="" type="video/mp4">
+                                        </source>
+                                        <source src="" type="video/ogg">
+                                        </source>
+                                        <source src="" type="video/webm">
+                                        </source>
+                                        <object width="" height="" type="application/x-shockwave-flash"
+                                            data="myvideo.swf">
+                                            <param name="movie" value="myvideo.swf" />
+                                            <param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+                                        </object>
+                                    </video>
+                                </div>
+                                <div class="right">
+                                    <div class="biao">
+                                        这是一个标题.mp4
+                                    </div>
+                                    <div class="bom">
+                                        <span>大小：2.0MB</span>
+                                        <span>上传时间：</span>
+                                        <span class="time">2018-12-12 12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                民情办已转发至<span class="lan">王木乡机构管理员王三太</span>
+                            </div>
+                        </div>
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                王木乡机构管理员王三太已转发至<span class="lan">王木乡民政局股股长王二毛办理</span>
+                            </div>
+                        </div>
+                        <div class="t1 t3">
+                            <div class="time top">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                部门领导批示：<span>请民政股解决群众问题！</span>
+                            </div>
+                            <div>
+                                <span class="lan">王木乡乡长王二蛋</span>
+                            </div>
+                            <div>要求截至日期：<span>2018-12-20 12:00</span></div>
+                        </div>
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                王木乡机构管理员王三太已转发至<span class="lan">王木乡民政局股股长王二毛审核</span>
+                            </div>
+                        </div>
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                民情办已转发至<span class="lan">王木乡机构管理员王三太</span>
+                            </div>
+                        </div>
+                        <div class="t1 t3">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                部门领导批示：请民政股解决群众问题！
+                            </div>
+                            <div>
+                                <span class="lan">王木乡乡长王二蛋</span>
+                            </div>
+                            <div>要求截至日期：2018-12-20 12:00</div>
+                        </div>
+                        <div class="t1">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                民情办已转发至<span class="lan">邻水县副县长李昌发审核</span>
+                            </div>
+                        </div>
+                        <div class="t2 t4">
+                            <div class="top time">
+                                2018-12-19 13:00
+                            </div>
+                            <div>
+                                民情名称：<span>王一村群众吃水困难</span>
+                            </div>
+                            <div>
+                                民情描述：<span>经为乡通宵奋战,不懈努力,在2018年12月19日中午顺利将自来水通到了王义村，全村200户群众已用上自来水</span>
+                            </div>
+                            <div>
+                                反映人：<span>王一帆</span>
+                            </div>
+                            <div>
+                                联系电话：<span>566161616161</span>
+                            </div>
+                            <div>事件分类：<span>民生问题—饮水类</span></div>
+                            <div>定位：<span>四川省广安市邻水县王木乡王义村东</span></div>
+                            <div>上传人：<span>王木乡政府 王小虎</span></div>
+                            <div>上传时间：<span>2018-12-13 16:21</span></div>
+                            <div class="tu flex" style="border-bottom: 1px solid rgba(228,231,237,1);">
+                                <div class="left">
+                                    <img src="img/分组 11@2x.png" width="109px" height="73px" />
+                                </div>
+                                <div class="right">
+                                    <div class="biao">
+                                        这是一个标题.jpg
+                                    </div>
+                                    <div class="bom">
+                                        <span>大小：2.0MB</span>
+                                        <span>上传时间：</span>
+                                        <span class="time">2018-12-12 12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tu video flex">
+                                <div class="left">
+                                    <video width="109px" height="73px" poster="img/分组 11@2x.png"
+                                        style="background:black;">
+                                        <source src="" type="video/mp4">
+                                        </source>
+                                        <source src="" type="video/ogg">
+                                        </source>
+                                        <source src="" type="video/webm">
+                                        </source>
+                                        <object width="" height="" type="application/x-shockwave-flash"
+                                            data="myvideo.swf">
+                                            <param name="movie" value="myvideo.swf" />
+                                            <param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
+                                        </object>
+                                    </video>
+                                </div>
+                                <div class="right">
+                                    <div class="biao">
+                                        这是一个标题.mp4
+                                    </div>
+                                    <div class="bom">
+                                        <span>大小：2.0MB</span>
+                                        <span>上传时间：</span>
+                                        <span class="time">2018-12-12 12:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --br: red;
+        }
+
+        #canvas {
+            border: 1px solid var(--br);
+        }
+
+        input {
+            width: 360px;
+            height: 52px;
+            border-radius: 2px;
+            border: 2px solid rgba(79, 127, 176, 1);
+            color: white;
+            font-size: 16px;
+            padding: 0px;
+            background: rgba(79, 127, 176, 1);
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding-left: 16px;
+            outline: none;
+        }
+
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: rgba(135, 150, 176, 1);
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background: url(img/bg.png)no-repeat center fixed;
+        }
+
+        #app {
+            width: 1366px;
+            height: 768px;
+            margin: auto;
+        }
+
+        header {
+            height: 106px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-left: 160px;
+        }
+
+        header img {
+            width: 126px;
+            height: 30px;
+        }
+
+        header span {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        header span.gary {
+            color: rgba(216, 216, 216, 1);
+            margin: 0 16px;
+        }
+
+        footer {
+            font-size: 12px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            margin-top: 102px;
+            letter-spacing: 2px;
+        }
+
+        #con {
+            padding-left: 127px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: rgba(217, 222, 232, 1);
+        }
+
+        #con .left {
+            width: 529px;
+            height: 497px;
+            background: url(img/Bitmap.png)no-repeat center;
+            background-size: 100% 100%;
+            -webkit-animation: ks 400s infinite linear;
+            animation: ks 400s infinite linear;
+        }
+
+        @-webkit-keyframes ks {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes ks {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        #con .right {
+            width: 414px;
+            height: 458px;
+            margin-left: 142px;
+            padding-left: 27px;
+            padding-top: 37px;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #con .right::after,
+        #con .right::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 434px;
+            height: 478px;
+            top: -10px;
+            left: -10px;
+            border: 4px solid #4f80b1;
+            border-image: -webkit-linear-gradient(#4f80b1, #00b5ff, white, #389acf) 30 30;
+            z-index: 10;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-animation: clipAni 4s infinite linear;
+            animation: clipAni 4s infinite linear;
+        }
+
+        #con .right::before {
+            -webkit-animation: clipAni 4s infinite linear -2s;
+            animation: clipAni 4s infinite linear -2s;
+        }
+
+        @-webkit-keyframes clipAni {
+
+            0%,
+            100% {
+                clip: rect(0px, 434px, 478px, 414px);
+                display: block;
+            }
+
+            25% {
+                clip: rect(0px, 434px, 20px, 0px);
+            }
+
+            50% {
+                clip: rect(0px, 20px, 478px, 0px);
+            }
+
+            75% {
+                clip: rect(458px, 434px, 478px, 0px);
+            }
+        }
+
+        @keyframes clipAni {
+
+            0%,
+            100% {
+                clip: rect(0px, 434px, 478px, 414px);
+                display: block;
+            }
+
+            25% {
+                clip: rect(0px, 434px, 20px, 0px);
+            }
+
+            50% {
+                clip: rect(0px, 20px, 478px, 0px);
+            }
+
+            75% {
+                clip: rect(458px, 434px, 478px, 0px);
+            }
+        }
+
+        #con .right div {
+            margin-bottom: 32px;
+        }
+
+        #con .right p {
+            margin-bottom: 10px;
+        }
+
+        #sumbit {
+            width: 360px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            background: rgba(0, 181, 255, 1);
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: PingFangSC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+            letter-spacing: 4px;
+            border: none;
+        }
+
+        #con .right .yan {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        #con .right .yan input {
+            width: 224px;
+        }
+
+        #con .right #canvas {
+            /* width: 112px;
+            height: 52px; */
+            display: block;
+            background: white;
+            margin-left: 14px;
+            text-align: center;
+            line-height: 52px;
+        }
+
+        h5 {
+            width: 360px;
+            text-align: center;
+            margin-top: 5px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" onselectstart="return false">
+        <header>
+            <img src="img/logo.png" alt="">
+            <span class="gary">|</span>
+            <span>康奈民情管理指挥系统</span>
+        </header>
+        <div id="con">
+            <div class="left">
+
+            </div>
+            <div class="from">
+                <div class="right">
+                    <div>
+                        <p>账号</p>
+                        <div>
+                            <input type="text" placeholder="请输入登录账号" autofocus id="user" minlength="6" maxlength="12">
+                        </div>
+                    </div>
+                    <div>
+                        <p>密码</p>
+                        <div>
+                            <input type="password" placeholder="请输入登录密码" id="pwd" minlength="6" maxlength="12"
+                                onpaste="return false" oncontextmenu="return false" oncopy="return false"
+                                oncut="return false">
+                        </div>
+                    </div>
+                    <div>
+                        <p>验证码</p>
+                        <div class="yan">
+                            <input type="text" placeholder="请输入验证码" id="yan" minlength="4" maxlength="4"
+                                onpaste="return false" oncontextmenu="return false" oncopy="return false"
+                                oncut="return false">
+                            <canvas id="canvas" width="120" height="40"></canvas>
+                        </div>
+                    </div>
+                    <button id="sumbit">登录</button>
+                    <h5 id="prompt"></h5>
+                </div>
+            </div>
+        </div>
+        <footer>
+            版权所有西安康奈网络科技有限公司 陕ICP备123456号-1
+        </footer>
+    </div>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("canvas");//演员
+            var context = canvas.getContext("2d");//演员表演的舞台
+            var str = "";//生成的验证码值
+            draw();
+            canvas.onclick = function () {
+                draw();
+            }
+            function getColor() {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                return "rgb(" + r + "," + g + "," + b + ")";
+            }
+            function draw() {
+                context.clearRect(0, 0, 120, 40);
+                canvas.style.setProperty('--br', getColor());
+                str = "";
+                var aCode = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m", "A", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+                for (let i = 0; i < 4; i++) {
+                    var x = 20 + 20 * i;
+                    var y = 20 + 10 * Math.random();
+                    var index = Math.floor(Math.random() * aCode.length);
+                    var txt = aCode[index];
+                        str += aCode[index];
+                    var fontRan = Math.floor(Math.random() * 20 + 12)
+                    context.font = `bold ${fontRan}px 微软雅黑`;
+                    context.fillStyle = getColor();
+                    context.setTransform(1, -0.12, 0.3, 1, 0, 12);
+                    context.fillText(txt, x, y);
+                }
+                for (let i = 0; i < 8; i++) {
+                    context.beginPath();
+                    context.moveTo(Math.random() * 120, Math.random() * 40);
+                    context.lineTo(Math.random() * 120, Math.random() * 40);
+                    context.strokeStyle = getColor();
+                    context.stroke();
+                }
+                for (let i = 0; i < 20; i++) {
+                    context.beginPath();
+                    var x = Math.random() * 120;
+                    var y = Math.random() * 40;
+                    context.moveTo(x, y);
+                    context.lineTo(x + 1, y + 1);
+                    context.strokeStyle = getColor();
+                    context.stroke();
+                }
+            }
+            var App = function () {
+                //账号
+                this.user = document.getElementById("user");
+                //密码
+                this.pwd = document.getElementById("pwd");
+                //输入的验证码
+                this.yan = document.getElementById("yan");
+                //提交登录
+                this.sumbit = document.getElementById("sumbit");
+                //登录提示
+                this.prompt = document.getElementById("prompt");
+                //输入框盒子
+                this.rightFrom = document.querySelector("#con .right");
+                this.str ="";
+            }
+            App.prototype = {
+                init() {
+                    this.bindEvent();
+                },
+                bindEvent() {
+                    this.rightFrom.addEventListener("click", this.iptClick.bind(this), false);
+                    this.sumbit.addEventListener("click", this.iptSumit.bind(this), false);
+                },
+                /*登录提交*/
+                iptSumit() {
+                    this.str =str;
+                    var user = this.user.value,
+                        pwd = this.pwd.value,
+                        yan = this.yan.value;
+                    this.promptShow(user, pwd, yan, this.str);
+                },
+                /*input获得焦点*/
+                iptClick(ev) {
+                    var e = e || window.event,
+                        tar = e.target || e.srcElement;
+                    if (tar.nodeName == "INPUT") {
+                        this.prompt.innerHTML = "";
+                    } else {
+                        return false;
+                    }
+                },
+                /*登录验证*/
+                promptShow(user, pwd, yan, str) {
+                    var prompt = this.prompt;
+                    var obj = {
+                        user: "请输入用户名！",
+                        pwd: "请输入密码！",
+                        yan: "验证码不能为空！",
+                        str: "验证码输入错误"
+                    }
+                    if (user == "") {
+                        prompt.innerHTML = obj.user;
+                    } else if (pwd == "") {
+                        prompt.innerHTML = obj.pwd;
+                    } else if (yan == "") {
+                        prompt.innerHTML = obj.yan;
+                    } else if (yan.toLowerCase() != str.toLowerCase()) {
+                        prompt.innerHTML = obj.str;
+                    } else {
+                        window.location.href = "index.html"
+                    }
+                }
+            }
+            new App().init();
+        }
+    </script>
+</body>
+
+</html>

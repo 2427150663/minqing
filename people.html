@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <style type="text/css">
+        #index .top .ipt div.zhi {
+            width: 30px;
+            height: 34px;
+            line-height: 34px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        input[type=date]::-webkit-inner-spin-button {
+            visibility: hidden;
+        }
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-bottom: 16px;
+            padding-top: 32px;
+        }
+
+        #index .top .tit .lie {
+            width: 150px;
+            margin-right: 30px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        #index .top .ipt div {
+            width: 150px;
+            margin-right: 30px;
+            padding: 10px 0px;
+        }
+
+        #index .top .ipt input {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt select,
+        #index .top .ipt option {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+        }
+
+        #index .top .ipt .btn {
+            margin-top: 10px;
+            width: 126px;
+            height: 34px;
+            padding: 0;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #ffffff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt .btn img {
+            -webkit-transform: translatey(3px);
+            transform: translatey(3px);
+            margin-right: 4px;
+        }
+
+        #index .top .ipt .sousuo {
+            background: #38b3ff;
+        }
+
+        #index .top .ipt .xiazai {
+            background: white;
+            color: #38b3ff;
+            border: 1px solid #38b3ff;
+        }
+
+        #index .top .ipt .shanchu {
+            background: #ff768a;
+        }
+
+        #index .top .botm #page {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding-top: 40px;
+            padding-left: 40%;
+        }
+
+        #index .top .botm #page li a {
+            border: 1px solid #ddd;
+            text-decoration: none;
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            cursor: pointer;
+        }
+
+        #index .top .botm #page li a:hover {
+            background-color: #eee;
+        }
+
+        #index .top .botm #page li div {
+            width: 60px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            padding: 5px 12px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #38b3ff;
+        }
+
+        #index .top .botm #page li input {
+            width: 68px;
+            height: 24px;
+            border-radius: 2px;
+            padding: 5px 12px;
+            border: 1px solid #dddfe6;
+            margin: 0 10px;
+            outline: none;
+            text-align: center;
+        }
+
+        #index .top .botm #page li.active a {
+            color: #fff;
+            cursor: default;
+            background-color: #337ab7;
+            border-color: #337ab7;
+        }
+
+        #index .top .botm table tr td .btn {
+            width:24%;
+            min-width: 62px;
+            height: 30px;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            text-align: center;
+            line-height: 30px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-right: 3px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #38b3ff;
+        }
+
+        #index .top .botm table tr td .btn1 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            background: #38b3ff;
+            color: #ffffff;
+        }
+        #index .top .botm table tr .t1 a {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #38b3ff;
+        }
+
+        #index .top .botm table .tt>td {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        .bigboxw {
+            position: relative;
+        }
+
+        /*//弹框*/
+
+        .bigboxw .bigbox {
+            width: 578px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 2px;
+            z-index: 999;
+            margin: 0 auto;
+            position: absolute;
+            top: 110px;
+            left:30%;
+            /*	display: none;*/
+        }
+
+        .bigboxw .bigbox h1 {
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(48, 49, 51, 1);
+            line-height: 52px;
+            padding-left: 20px;
+        }
+
+        .bigboxw .cont {
+            border-top: 1px solid rgba(228, 231, 237, 1);
+            background: rgba(250, 252, 255, 1);
+            padding: 20px;
+        }
+
+        .bigboxw .cont h3 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(96, 98, 102, 1);
+            margin-top: 20px;
+            padding-left: 20px;
+            line-height: 34px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(228, 231, 237, 1);
+            margin-bottom: 16px;
+        }
+
+        .bigboxw .cont span {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(96, 98, 102, 1);
+            margin-top: 20px;
+            padding-left: 20px;
+            line-height: 34px;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .bigboxw .bts {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 234px;
+            margin-top: 40px;
+        }
+
+        .bigboxw .bts button {
+            width: 88px;
+            height: 34px;
+            background: rgba(56, 179, 255, 1);
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            margin-bottom: 27px;
+            margin-right: 30px;
+        }
+
+        .bigboxw .queren {
+            color: white;
+        }
+
+        .bigboxw .bts .quxiao {
+            background: rgba(250, 252, 255, 1);
+            border: 1px solid rgba(56, 179, 255, 1);
+            color: skyblue;
+        }
+
+        .bigboxw .cont h4 {
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(48, 49, 51, 1);
+            padding-left: 20px;
+        }
+
+        .bigboxw h3 input {
+            width: 280px;
+            height: 34px;
+            outline: none;
+            margin-left: 15px;
+            border-radius: 2px;
+            border: 1px solid rgba(221, 223, 230, 1);
+            padding-left: 8px;
+            font-size: 14px;
+        }
+
+        .bigboxw h3 span {
+            line-height: 34px;
+        }
+
+        .bigboxw input[type=checkbox] {
+            width: 20px;
+            height: 20px;
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+            margin-right: 4px;
+        }
+
+        .bigboxw .list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: 20px;
+            padding-bottom: 0;
+        }
+
+        .bigboxw .list div {
+            width: 160px;
+            margin-bottom: 28px;
+        }
+
+        .bigboxw .timeb {
+            width: 414px;
+            border-top: 1px solid rgba(228, 231, 237, 1);
+            padding: 20px;
+            padding-left: 12px;
+        }
+
+        .bigboxw .timeb input {
+            margin-left: 8px;
+        }
+
+        .bigboxw.timeb input[type=checkbox] {
+            margin-right: 8px;
+        }
+
+        /*遮罩层*/
+
+        #bg {
+            /*display: none;*/
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 110%;
+            background: black;
+            /*定义透明度   0 - 1 */
+            opacity: 0.5;
+            z-index: 100;
+        }
+
+        .bigbox2 {
+            width: 454px;
+            height: 189px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 2px;
+            z-index: 9999;
+            margin: 0 auto;
+            position: absolute;
+            top: 110px;
+            left: 256px;
+            display: none;
+        }
+
+        .bigbox2 h1 {
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(48, 49, 51, 1);
+            line-height: 52px;
+            padding-left: 20px;
+        }
+
+        .bigbox2 .cont2 {
+            border-top: 1px solid rgba(228, 231, 237, 1);
+            height: 136px;
+            background: rgba(250, 252, 255, 1);
+        }
+
+        .bigbox2 .cont2 h3 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(96, 98, 102, 1);
+            margin-top: 20px;
+        }
+
+        .bigbox2 .cont2 img {
+            position: relative;
+            top: 6px;
+            left: 20px;
+            margin-right: 30px;
+        }
+
+        .bigbox2 .bts2 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 234px;
+            margin-top: 40px;
+        }
+
+        .bigbox2 .bts2 button {
+            width: 88px;
+            height: 34px;
+            background: rgba(56, 179, 255, 1);
+            border-radius: 2px;
+            border: none;
+            outline: none;
+        }
+
+        .bigbox2 .queren2 {
+            color: white;
+        }
+
+        .bigbox2 .bts2 .quxiao2 {
+            background: rgba(250, 252, 255, 1);
+            border: 1px solid rgba(56, 179, 255, 1);
+            margin-right: 30px;
+            color: skyblue;
+        }
+
+        .fang {
+            width: 14px;
+            height: 14px;
+            border: 1px solid #d2d3d8;
+        }
+
+        .list .flex>div.fang {
+            width: 18px;
+            height: 18px;
+            border: 1px solid #d2d3d8;
+            margin-right: 4px;
+        }
+
+        .list .flex>img {
+            margin-right: 4px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        #index .botm .zuo {
+            margin-right: 8px;
+        }
+
+        table tr td.tabtr {
+            height: 58px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        #conLeftTwo .tap:nth-child(3) .left {
+            border-left: 4px solid rgba(56, 179, 255, 1);
+        }
+
+        #conLeftTwo .tap:nth-child(3) .left img {
+            -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" style="position: relative;">
+        <nav>
+            <div class="con">
+                <div class="left">
+                    <img src="img/logo.png" width="101px" height="23px" class="tu1">
+                    <img src="img/menu@2x.png" width="20px" height="14px" class="tu2" id="open">
+                </div>
+                <div class="zhong">
+                    <span class="s1">康奈民情管理指挥系统</span>
+                    <span class="s2">——</span>
+                    <span class="s3">延安市互联网信息办公司</span>
+                </div>
+                <div class="right">
+                    <span class="s1">返回大厅</span>
+                    <span class="s2">|</span>
+                    <span class="s3">注销登录</span>
+                </div>
+            </div>
+        </nav>
+        <div id="con">
+            <div id="conLeft">
+                <div class="lie lie1">
+                    <div class="close" onclick="window.location.href='index.html'">
+                        <img src="img/home@2x.png">
+                        <span>首页</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie2">
+                        <div class="close">
+                            <img src="img/edit@2x.png">
+                            <span>走访管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='visit.html'">
+                                <span class="zflb">走访列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='plan.html'">
+                            <div class="zou">
+                                <span class="zflb">走访计划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie3">
+                    <div class="close bor" onclick="window.location.href='people.html'">
+                        <img src="img/user@2x.png">
+                        <span>民情管理</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie4">
+                        <div class="close">
+                            <img src="img/users@2x.png">
+                            <span>汇总统计</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='whole.html'">
+                                <span class="zflb">整体情况</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='statistical.html'">
+                            <div class="zou">
+                                <span class="zflb">民情统计</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='collect.html'">
+                            <div class="zou">
+                                <span class="zflb">机构采集排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='handle.html'">
+                            <div class="zou">
+                                <span class="zflb">机构办理排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='ofpeople.html'">
+                            <div class="zou">
+                                <span class="zflb">民情采集统计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie5">
+                        <div class="close">
+                            <img src="img/pie-chart@2x.png">
+                            <span>人员管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie" onclick="window.location.href='pelist.html'">
+                            <div class="zou">
+                                <span class="zflb">人员列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='activation.html'">
+                            <div class="zou ">
+                                <span class="zflb">激活码管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie6" onclick="window.location.href='management.html'">
+                    <div class="close">
+                        <img src="img/layers@2x.png">
+                        <span>机构管理</span>
+                    </div>
+                </div>
+                <div class="lie lie7" onclick="window.location.href='set.html'">
+                    <div class="close">
+                        <img src="img/settings@2x.png">
+                        <span>设置</span>
+                    </div>
+                </div>
+            </div>
+            <div id="conLeftTwo">
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/home@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='index.html'">
+                        首页
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/edit@2x.png">
+                    </div>
+                    <div class="right">
+                        走访管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='visit.html'">
+                        走访列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='plan.html'">
+                        走访计划
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/user@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='people.html'">
+                        民情管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/users@2x.png">
+                    </div>
+                    <div class="right">
+                        汇总统计
+                    </div>
+                    <div class="right right1" onclick="window.location.href='whole.html'">
+                        整体情况
+                    </div>
+                    <div class="right right2" onclick="window.location.href='statistical.html'">
+                        民情统计
+                    </div>
+                    <div class="right right3" onclick="window.location.href='collect.html'">
+                        机构采集排行
+                    </div>
+                    <div class="right right4" onclick="window.location.href='handle.html'">
+                        机构办理排行
+                    </div>
+                    <div class="right right5" onclick="window.location.href='ofpeople.html'">
+                        民情采集统计
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/pie-chart@2x.png">
+                    </div>
+                    <div class="right">
+                        人员管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='pelist.html'">
+                        人员列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='activation.html'">
+                        激活码管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/layers@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='management.html'">
+                        机构管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/settings@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='set.html'">
+                        设置
+                    </div>
+                </div>
+            </div>
+            <div id="conRight" style="position: relative;">
+                <div class="bigboxw">
+                    <div class="bigbox">
+                        <h1 class="yuqing">舆情转办</h1>
+                        <div class="cont">
+                            <h4>王义村群众吃水困难</h4>
+                            <h3><span>县领导批示</span><input type="text"></h3>
+                            <span>转给县领导</span>
+                            <div class="list">
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                            </div>
+                            <span>转给部门</span>
+                            <div class="list">
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                                <div class="flex">
+                                    <div class="fang zuo btm1"></div>
+                                    <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone" />王成
+                                    县委书记
+                                </div>
+                            </div>
+                            <div class="timeb flex" style="margin-left: 8px;">
+                                <div class="fang zuo btm1" style="width: 18px;height: 18px;margin-right: 4px;"></div>
+                                <img src="img/分组@2x(2).png" width="20px" height="20px" class="zuo none plone"
+                                    style="margin-right: 4px;" />截止日期<input type="date">
+                            </div>
+                            <div class="bts">
+                                <button class="quxiao">取消</button><button class="queren">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="bigboxw2">
+                    <div class="bigbox2">
+                        <h1 id="alerTitle">提示</h1>
+                        <div class="cont2">
+                            <h3><img src="img/alert.png" alt=""><span id="yesTitle">确定删除该走访人员数据？</span></h3>
+                            <div class="bts2">
+                                <button class="quxiao2">取消</button><button class="queren2">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="index">
+                    <div id="bg"></div>
+                    <h1>民情管理</h1>
+                    <div class="top">
+                        <div class="tit flex">
+                            <div class="lie">标题</div>
+                            <div class="lie">采集机构</div>
+                            <div class="lie">办理机构</div>
+                            <div class="lie">民情类型</div>
+                            <div class="lie">采集日期</div>
+                        </div>
+                        <div class="ipt flex">
+                            <div class="name">
+                                <input placeholder="输入人员姓名" class="int1" />
+                            </div>
+                            <div class="caiji">
+                                <select name="">
+                                    <option selected="selected">全部</option>
+                                    <option>教育局</option>
+                                    <option>民政局</option>
+                                    <option>王木乡</option>
+                                    <option>区委办</option>
+                                    <option>县领导</option>
+                                </select>
+                            </div>
+                            <div class="banli">
+                                <select name="">
+                                    <option selected="selected">全部</option>
+                                    <option>教育局</option>
+                                    <option>民情办</option>
+                                    <option>网信办</option>
+                                    <option>规划局</option>
+                                    <option>建设局</option>
+                                    <option>宣传部</option>
+                                </select>
+                            </div>
+                            <div class="minqing">
+                                <select name="">
+                                    <option selected="selected">全部</option>
+                                    <option selected="selected">生产生活类</option>
+                                    <option selected="selected">社保类</option>
+                                    <option selected="selected">住房类</option>
+                                    <option selected="selected">城乡建设类</option>
+                                    <option selected="selected">扶贫类</option>
+                                    <option selected="selected">环保类</option>
+                                    <option selected="selected">交通运输类</option>
+                                    <option selected="selected">饮水类</option>
+                                    <option selected="selected">工资类</option>
+                                    <option selected="selected">廉政类</option>
+                                    <option selected="selected">医疗类</option>
+                                    <option selected="selected">市容类</option>
+                                    <option selected="selected">教育类</option>
+                                    <option selected="selected">治安类</option>
+                                </select>
+                            </div>
+                            <div class="riqi">
+                                <input type="date" />
+                            </div>
+                            <div class="zhi">
+                                至
+                            </div>
+                            <div class="riqi" style="transform: translateX(-14px);">
+                                <input type="date" />
+                            </div>
+                        </div>
+                        <div class="tit flex" style="margin-top: 10px;">
+                            <div class="lie">办理状态</div>
+                        </div>
+                        <div class="ipt flex">
+                            <div class="caiji">
+                                <select name="">
+                                    <option selected="selected">全部</option>
+                                    <option>民情未转办</option>
+                                    <option>县领导正在批示</option>
+                                    <option>部门领导正在批示</option>
+                                    <option>部门管理员正在转办</option>
+                                    <option>办理人员正在办理</option>
+                                    <option>未转发县领导审核</option>
+                                    <option>县领导正在审定</option>
+                                    <option>已办结</option>
+                                    <option>无须办理</option>
+                                </select>
+                            </div>
+                            <div class="sousuo btn">
+                                <img src="img/search@2x.png" width="16px" height="16px" />搜索
+                            </div>
+                            <div class="shenchen btn xiazai">
+                                <img src="img/external-link@2x.png" width="16px" height="16px" />生成专报
+                            </div>
+                            <a id="dlink" style="display:none;"></a>
+                            <div class="xiazai btn" onclick="tableToExcel('tables', 'name', 'myfile.xls')">
+                                <img src="img/log-out@2x.png" width="16px" height="16px" />下载
+                            </div>
+                            <div class="shanchu btn">
+                                <img src="img/trash-2@2x.png" width="16px" height="16px" />删除
+                            </div>
+                        </div>
+                        <div class="botm">
+                            <table cellspacing="0" cellpadding="0" class="table tableStyles" id="tables">
+                                <tbody>
+                                    <tr class="tt">
+                                        <td class="tabtr"><input type="checkbox" name="" id="" value=""
+                                                style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />标题
+                                        </td>
+                                        <td>采集机构</td>
+                                        <td>类型</td>
+                                        <td>采集人员</td>
+                                        <td>采集时间</td>
+                                        <td>办理机构</td>
+                                        <td>当前状态</td>
+                                        <td>上次流转时间</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5'>待县领导审定</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5'>民情办未转办</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 red'>正在办理</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 no'>无需办理</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="t1 tabtr">
+                                            <input type="checkbox" name="" id="" value="" style="display: none;" />
+                                            <div class="fang zuo btm1"></div>
+                                            <img src="img/分组@2x(2).png" width="16px" height="16px"
+                                                class="zuo none plone" />
+                                            <a href="detailed.html">王义村吃水困难</a>
+                                        </td>
+                                        <td>王木乡</td>
+                                        <td>饮水类</td>
+                                        <td>王大安</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td>王木乡</td>
+                                        <td class='t5 green'>已办结</td>
+                                        <td>2018-12-14<br />12:00</td>
+                                        <td class="flex">
+                                            <div class="btn btn1">转办</div>
+                                            <div class="btn btn2">转发</div>
+                                            <div class="btn btn3">催办</div>
+                                            <div class="btn btn4">无需办理</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagebox">
+                                <div class="control">
+                                    <input class="goto-page-input" placeholder="输入页码" type="text">
+                                    <div class="btn goto-page-btn">跳至</div>
+                                </div>
+                                <div class="pagelist">
+                                    <span class="desc">共有结果<font class="num">4</font>个,本页显示<font class="num">1</font>
+                                        个</span>
+                                    <a href="/DepartmentList.aspx?act=s&page=1" class="lan">1</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">2</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=3">3</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">4</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">上一页</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">尾页</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/taber.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var App = function () {
+                /*表格*/
+                this.tab = document.querySelector("table");
+                /*表格的tr*/
+                this.tabtr = document.querySelectorAll("table tr");
+                /*转办转发弹出框*/
+                this.box = document.querySelector('.bigbox');
+                /*遮罩层*/
+                this.bg = document.querySelector("#bg");
+                /*取消*/
+                this.qx = document.querySelector('.quxiao');
+                /*确认*/
+                this.qr = document.querySelector('.queren');
+                /*删除*/
+                this.shanchu = document.querySelector(".shanchu");
+                /*删除丶催办丶无需办理弹出框*/
+                this.box2 = document.querySelector('.bigbox2');
+                /*催办取消*/
+                this.qx2 = document.querySelector('.quxiao2');
+                /*确认催办*/
+                this.qr2 = document.querySelector('.queren2');
+                /*弹出框提示标题*/
+                this.alerTitle = document.querySelector("#alerTitle");
+                /*弹出框提示内容*/
+                this.yesTitle = document.querySelector("#yesTitle");
+                /*舆情弹出框标题*/
+                this.yuqing = document.querySelector(".bigbox .yuqing");
+                /*舆情选择框*/
+                this.yuBox = document.querySelectorAll(".bigbox .fang");
+                /*舆情选择框*/
+                this.yuBox2 = document.querySelectorAll(".bigbox .plone");
+                /*index为tr下标*/
+                this.index = 1;
+                /*删除项*/
+                this.arr = [];
+            }
+            App.prototype = {
+                init() {
+                    this.bindEvent();
+                },
+                bindEvent() {
+                    /*删除*/
+                    this.shanchu.addEventListener("click", this.delClick.bind(this), false);
+                    /*表格中选中和转办等*/
+                    this.tab.addEventListener("click", this.tabClick.bind(this), false);
+                    /*舆情取消*/
+                    this.qx.addEventListener("click", this.closeBox.bind(this, 0), false);
+                    /*舆情确认*/
+                    this.qr.addEventListener("click", this.closeBox.bind(this, 1), false);
+                    /*催办取消*/
+                    this.qx2.addEventListener("click", this.closeBox.bind(this, 0), false);
+                    /*催办确认*/
+                    this.qr2.addEventListener("click", this.closeBox.bind(this, 1), false);
+                    /*舆情弹出框选中*/
+                    this.box.addEventListener("click", this.boxClick.bind(this), false);
+                },
+                /*弹出框选中*/
+                boxClick(e) {
+                    var e = e || window.event,
+                        tar = e.target || e.srcElement;
+                    /*选中*/
+                    if (tar.getAttribute("class").indexOf('fang') > -1) {
+                        tar.classList.add("none");
+                        tar.parentNode.children[1].classList.remove("none")
+                    }
+                    /*取消*/
+                    if (tar.getAttribute("class").indexOf('plone') > -1) {
+                        tar.classList.add("none");
+                        tar.parentNode.children[0].classList.remove("none");
+                    }
+                },
+                /*点击删除*/
+                tabClick(e) {
+                    var e = e || window.event,
+                        tar = e.target || e.srcElement;
+                    /*选中*/
+                    if (tar.getAttribute("class").indexOf('fang') > -1) {
+                        var index = Array.prototype.indexOf.call(this.tabtr, tar.parentNode
+                            .parentNode);
+                        this.index = index;
+                        tar.classList.add("none");
+                        this.arr.push(this.index)
+                        this.tabtr[index].querySelectorAll("td")[0].querySelector(
+                            ".plone").classList.remove("none")
+                    }
+                    /*取消*/
+                    if (tar.getAttribute("class").indexOf('plone') > -1) {
+                        var index = Array.prototype.indexOf.call(this.tabtr, tar.parentNode
+                            .parentNode);
+                        this.index = index;
+                        var idex = this.arr.indexOf(index);
+                        this.arr.splice(idex, 1);
+                        tar.classList.add("none");
+                        this.tabtr[index].querySelectorAll("td")[0].querySelector(".fang")
+                            .classList.remove("none")
+                    }
+                    /*转办*/
+                    if (tar.getAttribute("class").indexOf('btn1') > -1) {
+                        this.show();
+                        this.yuqing.innerHTML = "舆情转办";
+                        var len = this.yuBox.length;
+                        this.nullBox();
+                    }
+                    /*转发*/
+                    if (tar.getAttribute("class").indexOf('btn2') > -1) {
+                        this.show();
+                        this.yuqing.innerHTML = "舆情转发";
+                        this.nullBox();
+                    }
+                    /*催办*/
+                    if (tar.getAttribute("class").indexOf('btn3') > -1) {
+                        this.show2();
+                        this.alerTitle.innerHTML = "舆情催办"
+                        this.yesTitle.innerHTML = "确定催办该舆情吗？"
+                    }
+                    /*无需办理*/
+                    if (tar.getAttribute("class").indexOf('btn4') > -1) {
+                        this.show2();
+                        this.alerTitle.innerHTML = "无需办理"
+                        this.yesTitle.innerHTML = "确定将该民情无需办理？"
+                    }
+                },
+                /*删除表格选中的tr*/
+                delClick() {
+                    if (this.arr.length >= 1) {
+                        this.show2();
+                    }
+                },
+                /*点击确认或者取消*/
+                closeBox(flag) {
+                    var index = this.index;
+                    if (flag === 1) {
+                        this.arr.forEach((x) => {
+                            if (x == 0) {
+                                return false;
+                            }
+                            this.tabtr[x].remove();
+                        })
+                        this.hide();
+                        this.hide2();
+                        this.arr = [];
+                    } else if (flag === 0) {
+                        this.hide();
+                        this.hide2();
+                    }
+                },
+                hide() {
+                    this.box.style.display = "none";
+                    this.bg.style.display = "none";
+                },
+                show() {
+                    this.box.style.display = "block";
+                    this.bg.style.display = "block";
+                },
+                hide2() {
+                    this.box2.style.display = "none";
+                    this.bg.style.display = "none";
+                },
+                show2() {
+                    this.box2.style.display = "block";
+                    this.bg.style.display = "block";
+                },
+                /*清空弹框选中项*/
+                nullBox() {
+                    var len = this.yuBox.length;
+                    for (var i = 0; i < len; i++) {
+                        this.yuBox[i].classList.remove("none");
+                        this.yuBox2[i].classList.add("none");
+                    }
+                }
+
+            }
+            new App().init();
+        }
+    </script>
+</body>
+
+</html>

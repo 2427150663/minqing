@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <style type="text/css">
+        #index {
+            padding-top: 27px;
+        }
+
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+        }
+
+        #index .top {
+            padding-top: 20px;
+        }
+
+        #index .top .tit .lie {
+            width: 150px;
+            margin-right: 30px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        #index .top .ipt div {
+            width: 150px;
+            margin-right: 30px;
+            padding: 10px 0px;
+        }
+
+        #index .top .ipt input {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt select,
+        #index .top .ipt option {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+        }
+
+        #index .top .ipt .btn {
+            margin-top: 10px;
+            width: 126px;
+            height: 34px;
+            padding: 0;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #ffffff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt .btn img {
+            -webkit-transform: translatey(3px);
+            transform: translatey(3px);
+            margin-right: 4px;
+        }
+
+        #index .top .ipt .sousuo {
+            background: #38b3ff;
+        }
+
+        #index .top .ipt .xiazai {
+            background: white;
+            color: #38b3ff;
+            border: 1px solid #38b3ff;
+        }
+
+        #index .top .ipt .shanchu {
+            background: #ff768a;
+        }
+
+        #index .top .botm {
+            min-width: 1118px;
+            margin-top: 4px;
+        }
+
+        #index .top .botm #page {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding-top: 40px;
+            padding-left: 40%;
+        }
+
+        #index .top .botm #page li a {
+            border: 1px solid #ddd;
+            text-decoration: none;
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            cursor: pointer;
+        }
+
+        #index .top .botm #page li a:hover {
+            background-color: #eee;
+        }
+
+        #index .top .botm #page li div {
+            width: 60px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            padding: 5px 12px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #38b3ff;
+        }
+
+        #index .top .botm #page li input {
+            width: 68px;
+            height: 24px;
+            border-radius: 2px;
+            padding: 5px 12px;
+            border: 1px solid #dddfe6;
+            margin: 0 10px;
+            outline: none;
+            text-align: center;
+        }
+
+        #index .top .botm #page li.active a {
+            color: #fff;
+            cursor: default;
+            background-color: #337ab7;
+            border-color: #337ab7;
+        }
+
+        #index .toop {
+            min-width: 1118px;
+            height: 241px;
+            margin-top: 24px;
+            background: #ffffff;
+            -webkit-box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            border-radius: 2px;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        #index .toop .name {
+            min-width: 1118px;
+            height: 52px;
+            line-height: 52px;
+            font-size: 16px;
+            padding-left: 20px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            border-bottom: 1px solid #e4e7ed;
+        }
+
+        #index .bom {
+            height: 287px;
+        }
+
+        #index .bom .zhong {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-top: -13px;
+        }
+
+        #index .bom .zhong .min {
+            min-width: 372.6666666666667px;
+        }
+
+        #index .bom .zhong .min .top {
+            height: 52px;
+            line-height: 52px;
+            border-bottom: 1px solid #e4e7ed;
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-left: 20px;
+        }
+
+        #index .bom .zhong .min .bottom {
+            width: 140px;
+            height: 140px;
+            margin: auto;
+            position: relative;
+        }
+
+        #index .bom .zhong .min .bottom .quan {
+            width: 140px;
+            height: 140px;
+            text-align: center;
+        }
+
+        #index .bom .zhong .min .bottom span {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #38b3ff;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #index .bom .zhong .min .di {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #606266;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        #index table tr .tabtr {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            height: 58px;
+            line-height: 58px;
+        }
+
+        #index table tr .tabtr .btn {
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 1);
+            background: rgba(56, 179, 255, 1);
+            border-radius: 2px;
+            margin-left: 40px;
+            border-radius: 2px;
+        }
+
+        #index table tr .tabtr .btn1 {
+            border: 1px solid rgba(56, 179, 255, 1);
+            color: rgba(56, 179, 255, 1);
+            background: white;
+        }
+
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-top: 32px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        #index h1 .bttn {
+            width: 126px;
+            height: 34px;
+            line-height: 34px;
+            background: #ff768a;
+            border-radius: 2px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #ffffff;
+            text-align: center;
+            margin-left: 895px;
+        }
+
+        #index h5 {
+            font-size: 12px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        .bigbox {
+            width: 454px;
+            height: 189px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 2px;
+            z-index: 9999;
+            margin: 0 auto;
+            position: absolute;
+            top: 110px;
+            left: 256px;
+            /* display: none; */
+        }
+
+        .bigbox h1 {
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(48, 49, 51, 1);
+            line-height: 52px;
+            padding-left: 20px;
+        }
+
+        .cont {
+            border-top: 1px solid rgba(228, 231, 237, 1);
+            height: 136px;
+            background: rgba(250, 252, 255, 1);
+        }
+
+        .cont h3 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(96, 98, 102, 1);
+            margin-top: 20px;
+        }
+
+        .cont img {
+            position: relative;
+            top: 6px;
+            left: 20px;
+            margin-right: 30px;
+        }
+
+        .bts {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 234px;
+            margin-top: 40px;
+        }
+
+        .bts button {
+            width: 88px;
+            height: 34px;
+            background: rgba(56, 179, 255, 1);
+            border-radius: 2px;
+            border: none;
+            outline: none;
+        }
+
+        .queren {
+            color: white;
+        }
+
+        .bts .quxiao {
+            background: rgba(250, 252, 255, 1);
+            border: 1px solid rgba(56, 179, 255, 1);
+            margin-right: 30px;
+            color: skyblue;
+        }
+
+        /*遮罩层*/
+
+        #bg {
+            /*display: none;*/
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: black;
+            /*定义透明度   0 - 1 */
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+        .quxiao,
+        .queren {
+            cursor: pointer;
+        }
+
+        #conLeftTwo .tap:nth-child(5) .left {
+            border-left: 4px solid rgba(56, 179, 255, 1);
+        }
+
+        #conLeftTwo .tap:nth-child(5) .left img {
+            -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" style="position: relative;">
+        <nav>
+            <div class="con">
+                <div class="left">
+                    <img src="img/logo.png" width="101px" height="23px" class="tu1">
+                    <img src="img/menu@2x.png" width="20px" height="14px" class="tu2" id="open">
+                </div>
+                <div class="zhong">
+                    <span class="s1">康奈民情管理指挥系统</span>
+                    <span class="s2">——</span>
+                    <span class="s3">延安市互联网信息办公司</span>
+                </div>
+                <div class="right">
+                    <span class="s1">返回大厅</span>
+                    <span class="s2">|</span>
+                    <span class="s3">注销登录</span>
+                </div>
+            </div>
+        </nav>
+        <div id="con">
+            <div id="conLeft">
+                <div class="lie lie1">
+                    <div class="close" onclick="window.location.href='index.html'">
+                        <img src="img/home@2x.png">
+                        <span>首页</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie2">
+                        <div class="close">
+                            <img src="img/edit@2x.png">
+                            <span>走访管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='visit.html'">
+                                <span class="zflb ">走访列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='plan.html'">
+                            <div class="zou">
+                                <span class="zflb">走访计划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie3">
+                    <div class="close" onclick="window.location.href='people.html'">
+                        <img src="img/user@2x.png">
+                        <span>民情管理</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie4">
+                        <div class="close">
+                            <img src="img/users@2x.png">
+                            <span>汇总统计</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='whole.html'">
+                                <span class="zflb ">整体情况</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='statistical.html'">
+                            <div class="zou">
+                                <span class="zflb">民情统计</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='collect.html'">
+                            <div class="zou">
+                                <span class="zflb">机构采集排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='handle.html'">
+                            <div class="zou">
+                                <span class="zflb">机构办理排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='ofpeople.html'">
+                            <div class="zou">
+                                <span class="zflb">民情采集统计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openTap">
+                    <div class="lie lie5">
+                        <div class="close bor">
+                            <img src="img/pie-chart@2x.png">
+                            <span>人员管理</span>
+                            <img src="img/plp.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie" onclick="window.location.href='pelist.html'">
+                            <div class="zou">
+                                <span class="zflb">人员列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='activation.html'">
+                            <div class="zou ">
+                                <span class="zflb class-a">激活码管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie6" onclick="window.location.href='management.html'">
+                    <div class="close">
+                        <img src="img/layers@2x.png">
+                        <span>机构管理</span>
+                    </div>
+                </div>
+                <div class="lie lie7" onclick="window.location.href='set.html'">
+                    <div class="close">
+                        <img src="img/settings@2x.png">
+                        <span>设置</span>
+                    </div>
+                </div>
+            </div>
+            <div id="conLeftTwo">
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/home@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='index.html'">
+                        首页
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/edit@2x.png">
+                    </div>
+                    <div class="right">
+                        走访管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='visit.html'">
+                        走访列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='plan.html'">
+                        走访计划
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/user@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='people.html'">
+                        民情管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/users@2x.png">
+                    </div>
+                    <div class="right">
+                        汇总统计
+                    </div>
+                    <div class="right right1" onclick="window.location.href='whole.html'">
+                        整体情况
+                    </div>
+                    <div class="right right2" onclick="window.location.href='statistical.html'">
+                        民情统计
+                    </div>
+                    <div class="right right3" onclick="window.location.href='collect.html'">
+                        机构采集排行
+                    </div>
+                    <div class="right right4" onclick="window.location.href='handle.html'">
+                        机构办理排行
+                    </div>
+                    <div class="right right5" onclick="window.location.href='ofpeople.html'">
+                        民情采集统计
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/pie-chart@2x.png">
+                    </div>
+                    <div class="right">
+                        人员管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='pelist.html'">
+                        人员列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='activation.html'">
+                        激活码管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/layers@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='management.html'">
+                        机构管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/settings@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='set.html'">
+                        设置
+                    </div>
+                </div>
+            </div>
+            <div id="conRight" style="position: relative;">
+                <div id="bg"></div>
+                <div class="bigboxw">
+                    <div class="bigbox" draggable="true">
+                        <h1>提示</h1>
+                        <div class="cont">
+                            <h3><img src="img/alert.png" alt="">确定删除<span id="userName"></span>账户？</h3>
+                            <div class="bts">
+                                <button class="quxiao">取消</button><button class="queren">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="index">
+                    <h5>激活码管理>激活码管理详情</h5>
+                    <h1>激活码管理详情</h1>
+                    <div class="top">
+                        <div class="ipt flex">
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                机构
+                            </div>
+                            <div class="name">
+                                <select>
+                                    <option selected="selected">全部</option>
+                                </select>
+                            </div>
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                类型
+                            </div>
+                            <div class="name">
+                                <select>
+                                    <option selected="selected">全部</option>
+                                </select>
+                            </div>
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                状态
+                            </div>
+                            <div class="name">
+                                <select>
+                                    <option selected="selected">全部</option>
+                                    <option>已激活</option>
+                                    <option>未激活</option>
+                                </select>
+                            </div>
+                            <div class="sousuo btn">
+                                <img src="img/search@2x.png" width="16px" height="16px" />搜索
+                            </div>
+                        </div>
+                        <div class="botm">
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr class="tt">
+                                        <td>ID</td>
+                                        <td>机构</td>
+                                        <td>人员类型</td>
+                                        <td>激活码</td>
+                                        <td>状态</td>
+                                        <td>姓名</td>
+                                        <td>职务</td>
+                                        <td>电话</td>
+                                        <td>身份证号</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>李四</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>县领导</td>
+                                        <td>部门领导</td>
+                                        <td>1111-1111-1111-1111</td>
+                                        <td>已激活</td>
+                                        <td>张三</td>
+                                        <td>副县长</td>
+                                        <td>18717324603</td>
+                                        <td>61014564654854984986</td>
+                                        <td class="last">
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <div class="pagebox">
+                                <div class="control">
+                                    <input class="goto-page-input" placeholder="输入页码" type="text">
+                                    <div class="btn goto-page-btn">跳至</div>
+                                </div>
+                                <div class="pagelist">
+                                    <span class="desc">共有结果<font class="num">4</font>个,本页显示<font class="num">1</font>
+                                        个</span>
+                                    <a href="/DepartmentList.aspx?act=s&page=1" class="lan">1</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">2</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=3">3</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">4</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">上一页</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">尾页</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            window.onload = function () {
+                var App = function () {
+                    /*表格*/
+                    this.tab = document.querySelector("table");
+                    /*表格的tr*/
+                    this.tabtr = document.querySelectorAll("table tr");
+                    /*弹出框*/
+                    this.box = document.querySelector('.bigbox');
+                    /*遮罩层*/
+                    this.bg = document.querySelector("#bg");
+                    /*用户名*/
+                    this.userName = document.getElementById("userName");
+                    /*取消*/
+                    this.qx = document.querySelector('.quxiao');
+                    /*确认*/
+                    this.qr = document.querySelector('.queren');
+                    /*index为tr下标*/
+                    this.index = 1;
+                }
+                App.prototype = {
+                    init() {
+                        this.bindEvent();
+                    },
+                    bindEvent() {
+                        this.tab.addEventListener("click", this.tabClick.bind(this), false);
+                        this.qx.addEventListener("click", this.closeBox.bind(this, 0), false);
+                        this.qr.addEventListener("click", this.closeBox.bind(this, 1), false);
+                    },
+                    /*点击删除*/
+                    tabClick(e) {
+                        var e = e || window.event,
+                            tar = e.target || e.srcElement;
+                        if (tar.getAttribute("class").indexOf('shanchu') > -1) {
+                            var txt = tar.parentNode.parentNode.querySelectorAll("td")[5].innerHTML;
+                            var index = Array.prototype.indexOf.call(this.tabtr, tar.parentNode.parentNode);
+                            this.index = index;
+                            this.userName.innerHTML = txt;
+                            this.box.style.display = "block";
+                            this.bg.style.display = "block";
+                        }
+                    },
+                    /*点击确认或者取消*/
+                    closeBox(flag) {
+                        if (flag === 1) {
+                            var index = this.index;
+                            this.tabtr[index].remove();
+                        }
+                        this.box.style.display = "none";
+                        this.bg.style.display = "none";
+                    }
+
+                }
+                new App().init();
+            }
+        </script>
+</body>
+
+</html>

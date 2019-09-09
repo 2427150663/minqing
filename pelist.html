@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <style type="text/css">
+        input[type="date"]::-webkit-inner-spin-button {
+            visibility: hidden;
+        }
+
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-bottom: 16px;
+            padding-top: 32px;
+            width: 100%;
+            position: relative;
+        }
+
+        #index h1 span {
+            position: absolute;
+            width: 126px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #38b3ff;
+            top: 40px;
+            right: 25px;
+        }
+
+        #index .top .tit .lie {
+            width: 150px;
+            margin-right: 30px;
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #919398;
+        }
+
+        #index .top .ipt div {
+            width: 150px;
+            margin-right: 30px;
+            padding: 10px 0px;
+        }
+
+        #index .top .ipt input {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt select,
+        #index .top .ipt option {
+            width: 150px;
+            height: 34px;
+            border-radius: 2px;
+            border: 1px solid #dddfe6;
+            padding-left: 8px;
+        }
+
+        #index .top .ipt .btn {
+            margin-top: 10px;
+            width: 126px;
+            height: 34px;
+            padding: 0;
+            line-height: 34px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #ffffff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #index .top .ipt .btn img {
+            -webkit-transform: translatey(3px);
+            transform: translatey(3px);
+            margin-right: 4px;
+        }
+
+        #index .top .ipt .sousuo {
+            background: #38b3ff;
+        }
+
+        #index .top .ipt .xiazai {
+            background: white;
+            color: #38b3ff;
+            border: 1px solid #38b3ff;
+        }
+
+        #index .top .ipt .shanchu {
+            background: #ff768a;
+        }
+
+        #index .top .botm {
+            min-width: 1118px;
+        }
+
+        #index .top .botm #page {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding-top: 40px;
+            padding-left: 40%;
+        }
+
+        #index .top .botm #page li a {
+            border: 1px solid #ddd;
+            text-decoration: none;
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            cursor: pointer;
+        }
+
+        #index .top .botm #page li a:hover {
+            background-color: #eee;
+        }
+
+        #index .top .botm #page li div {
+            width: 60px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid #38b3ff;
+            padding: 5px 12px;
+            font-size: 14px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            color: #38b3ff;
+        }
+
+        #index .top .botm #page li input {
+            width: 68px;
+            height: 24px;
+            border-radius: 2px;
+            padding: 5px 12px;
+            border: 1px solid #dddfe6;
+            margin: 0 10px;
+            outline: none;
+            text-align: center;
+        }
+
+        #index .top .botm #page li.active a {
+            color: #fff;
+            cursor: default;
+            background-color: #337ab7;
+            border-color: #337ab7;
+        }
+
+        .swich {
+            width: 45px;
+            height: 20px;
+            border-radius: 15px;
+            background: rgba(56, 179, 255, 1);
+            position: relative;
+            cursor: pointer;
+            -webkit-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+        .swich input {
+            display: none;
+        }
+
+        .swich .swiq {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .swich-on {
+            background: gainsboro;
+        }
+
+        .swich-on .swiq {
+            top: 0;
+            left: 0;
+        }
+
+        table td .btn {
+            width: 62px;
+            height: 30px;
+            line-height: 30px;
+            color: white;
+            text-align: center;
+            background: rgba(255, 118, 138, 1);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .bigbox {
+            width: 454px;
+            height: 189px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 2px;
+            z-index: 9999;
+            margin: 0 auto;
+            position: absolute;
+            top: 110px;
+            left: 256px;
+            /* display: none; */
+        }
+
+        .bigbox h1 {
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(48, 49, 51, 1);
+            line-height: 52px;
+            padding-left: 20px;
+        }
+
+        .cont {
+            border-top: 1px solid rgba(228, 231, 237, 1);
+            height: 136px;
+            background: rgba(250, 252, 255, 1);
+        }
+
+        .cont h3 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(96, 98, 102, 1);
+            margin-top: 20px;
+        }
+
+        .cont img {
+            position: relative;
+            top: 6px;
+            left: 20px;
+            margin-right: 30px;
+        }
+
+        .bts {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: 234px;
+            margin-top: 40px;
+        }
+
+        .bts button {
+            width: 88px;
+            height: 34px;
+            background: rgba(56, 179, 255, 1);
+            border-radius: 2px;
+            border: none;
+            outline: none;
+        }
+
+        .queren {
+            color: white;
+        }
+
+        .bts .quxiao {
+            background: rgba(250, 252, 255, 1);
+            border: 1px solid rgba(56, 179, 255, 1);
+            margin-right: 30px;
+            color: skyblue;
+        }
+
+        /*遮罩层*/
+
+        #bg {
+            /*display: none;*/
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: black;
+            /*定义透明度   0 - 1 */
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+        .btn {
+            cursor: pointer;
+        }
+
+        h1 span {
+            cursor: pointer;
+        }
+
+        #conLeftTwo .tap:nth-child(5) .left {
+            border-left: 4px solid rgba(56, 179, 255, 1);
+        }
+
+        #conLeftTwo .tap:nth-child(5) .left img {
+            -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" style="position: relative;">
+        <nav>
+            <div class="con">
+                <div class="left">
+                    <img src="img/logo.png" width="101px" height="23px" class="tu1" />
+                    <img src="img/menu@2x.png" width="20px" height="14px" class="tu2" id="open" />
+                </div>
+                <div class="zhong">
+                    <span class="s1">康奈民情管理指挥系统</span>
+                    <span class="s2">——</span>
+                    <span class="s3">延安市互联网信息办公司</span>
+                </div>
+                <div class="right">
+                    <span class="s1">返回大厅</span>
+                    <span class="s2">|</span>
+                    <span class="s3">注销登录</span>
+                </div>
+            </div>
+        </nav>
+        <div id="con">
+            <div id="conLeft">
+                <div class="lie lie1">
+                    <div class="close" onclick="window.location.href='index.html'">
+                        <img src="img/home@2x.png">
+                        <span>首页</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie2">
+                        <div class="close">
+                            <img src="img/edit@2x.png">
+                            <span>走访管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='visit.html'">
+                                <span class="zflb ">走访列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='plan.html'">
+                            <div class="zou">
+                                <span class="zflb">走访计划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie3">
+                    <div class="close" onclick="window.location.href='people.html'">
+                        <img src="img/user@2x.png">
+                        <span>民情管理</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie4">
+                        <div class="close">
+                            <img src="img/users@2x.png">
+                            <span>汇总统计</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='whole.html'">
+                                <span class="zflb ">整体情况</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='statistical.html'">
+                            <div class="zou">
+                                <span class="zflb">民情统计</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='collect.html'">
+                            <div class="zou">
+                                <span class="zflb">机构采集排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='handle.html'">
+                            <div class="zou">
+                                <span class="zflb">机构办理排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='ofpeople.html'">
+                            <div class="zou">
+                                <span class="zflb">民情采集统计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openTap">
+                    <div class="lie lie5">
+                        <div class="close bor">
+                            <img src="img/pie-chart@2x.png">
+                            <span>人员管理</span>
+                            <img src="img/plp.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie" onclick="window.location.href='pelist.html'">
+                            <div class="zou">
+                                <span class="zflb class-a">人员列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='activation.html'">
+                            <div class="zou ">
+                                <span class="zflb">激活码管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie6" onclick="window.location.href='management.html'">
+                    <div class="close">
+                        <img src="img/layers@2x.png">
+                        <span>机构管理</span>
+                    </div>
+                </div>
+                <div class="lie lie7" onclick="window.location.href='set.html'">
+                    <div class="close">
+                        <img src="img/settings@2x.png">
+                        <span>设置</span>
+                    </div>
+                </div>
+            </div>
+            <div id="conLeftTwo">
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/home@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='index.html'">
+                        首页
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/edit@2x.png">
+                    </div>
+                    <div class="right">
+                        走访管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='visit.html'">
+                        走访列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='plan.html'">
+                        走访计划
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/user@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='people.html'">
+                        民情管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/users@2x.png">
+                    </div>
+                    <div class="right">
+                        汇总统计
+                    </div>
+                    <div class="right right1" onclick="window.location.href='whole.html'">
+                        整体情况
+                    </div>
+                    <div class="right right2" onclick="window.location.href='statistical.html'">
+                        民情统计
+                    </div>
+                    <div class="right right3" onclick="window.location.href='collect.html'">
+                        机构采集排行
+                    </div>
+                    <div class="right right4" onclick="window.location.href='handle.html'">
+                        机构办理排行
+                    </div>
+                    <div class="right right5" onclick="window.location.href='ofpeople.html'">
+                        民情采集统计
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/pie-chart@2x.png">
+                    </div>
+                    <div class="right">
+                        人员管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='pelist.html'">
+                        人员列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='activation.html'">
+                        激活码管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/layers@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='management.html'">
+                        机构管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/settings@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='set.html'">
+                        设置
+                    </div>
+                </div>
+            </div>
+            <div id="conRight" style="position: relative;">
+                <div class="bigboxw">
+                    <div class="bigbox">
+                        <h1>账户状态</h1>
+                        <div class="cont">
+                            <h3><img src="img/alert.png" alt="">确定<span id="del">删除</span><span id="userName"></span>账户？
+                            </h3>
+                            <div class="bts">
+                                <button class="quxiao">取消</button><button class="queren">确认</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="index">
+                    <div id="bg"></div>
+                    <h1>人员列表<span onclick="window.location.href='activation.html'">激活码管理</span></h1>
+                    <div class="top">
+                        <div class="ipt flex">
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                机构
+                            </div>
+                            <div class="name">
+                                <select>
+                                    <option selected="selected">全部</option>
+                                    <option>县领导</option>
+                                    <option>网信办</option>
+                                    <option>宣传部</option>
+                                    <option>环保局</option>
+                                    <option>建设局</option>
+                                </select>
+                            </div>
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                类型
+                            </div>
+                            <div class="name">
+                                <select>
+                                    <option selected="selected">全部</option>
+                                    <option>机构管理人员</option>
+                                    <option>工作人员</option>
+                                    <option>部门领导</option>
+                                </select>
+                            </div>
+                            <div class="tt"
+                                style="width: 40px;height: 34px;line-height: 34px;color:rgba(145,147,152,1);">
+                                姓名
+                            </div>
+                            <div class="name">
+                                <input type="text">
+                            </div>
+                            <div class="sousuo btn">
+                                <img src="img/search@2x.png" width="16px" height="16px" />搜索
+                            </div>
+                        </div>
+                        <div class="botm">
+                            <table cellspacing="0" cellpadding="0" class="table tableStyles" id="tables">
+                                <tbody>
+                                    <tr class="tt">
+                                        <td>序号</td>
+                                        <td>姓名</td>
+                                        <td>身份证号</td>
+                                        <td>人员类型</td>
+                                        <td>机构</td>
+                                        <td>职务</td>
+                                        <td>电话</td>
+                                        <td>绑定时间</td>
+                                        <td>工作状况</td>
+                                        <td>账户状态</td>
+                                        <td>操作</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>李二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>王二</td>
+                                        <td>6101616161616516</td>
+                                        <td>部门领导</td>
+                                        <td>县领导</td>
+                                        <td>副县长</td>
+                                        <td>13333333</td>
+                                        <td>2018-11-20 12:00</td>
+                                        <td class="t1">
+                                            <a href="visitde.html">查看</a>
+                                        </td>
+                                        <td>
+                                            <div class="swich">
+                                                <input type="checkbox" value="" name="" />
+                                                <div class="swiq"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn shanchu">删除</div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <div class="pagebox">
+                                <div class="control">
+                                    <input class="goto-page-input" placeholder="输入页码" type="text">
+                                    <div class="btn goto-page-btn">跳至</div>
+                                </div>
+                                <div class="pagelist">
+                                    <span class="desc">共有结果<font class="num">4</font>个,本页显示<font class="num">1</font>
+                                        个</span>
+                                    <a href="/DepartmentList.aspx?act=s&page=1" class="lan">1</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">2</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=3">3</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">4</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=2">上一页</a>
+                                    <a href="/DepartmentList.aspx?act=s&page=4">尾页</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var App = function () {
+                    /*表格*/
+                    this.tab = document.querySelector("table");
+                    /*表格的tr*/
+                    this.tabtr = document.querySelectorAll("table tr");
+                    /*弹出框*/
+                    this.box = document.querySelector('.bigbox');
+                    /*遮罩层*/
+                    this.bg = document.querySelector("#bg");
+                    /*用户名*/
+                    this.userName = document.getElementById("userName");
+                    /*取消*/
+                    this.qx = document.querySelector('.quxiao');
+                    /*确认*/
+                    this.qr = document.querySelector('.queren');
+                    /*删除或者锁定*/
+                    this.del = document.querySelector("#del");
+                    /*锁定开关按钮*/
+                    this.swich = document.querySelector(".swich");
+                    /*index为tr下标*/
+                    this.index = 1;
+                    /*true为删除false为锁定*/
+                    this.copen = true;
+                }
+                App.prototype = {
+                    init() {
+                        this.bindEvent();
+                    },
+                    bindEvent() {
+                        this.tab.addEventListener("click", this.tabClick.bind(this), false);
+                        this.qx.addEventListener("click", this.closeBox.bind(this, 0), false);
+                        this.qr.addEventListener("click", this.closeBox.bind(this, 1), false);
+                    },
+                    /*点击删除*/
+                    tabClick(e) {
+                        var e = e || window.event,
+                            tar = e.target || e.srcElement;
+                        /*删除*/
+                        if (tar.getAttribute("class").indexOf('shanchu') > -1) {
+                            var txt = tar.parentNode.parentNode.querySelectorAll("td")[1].innerHTML;
+                            var index = Array.prototype.indexOf.call(this.tabtr, tar.parentNode.parentNode);
+                            this.index = index;
+                            this.userName.innerHTML = txt;
+                            this.del.innerHTML = "删除"
+                            this.box.style.display = "block";
+                            this.bg.style.display = "block";
+                            this.copen = true;
+                        }
+                        /*锁定*/
+                        if (tar.getAttribute("class").indexOf('swich') > -1) {
+                            var txt = tar.parentNode.parentNode.querySelectorAll("td")[1].innerHTML;
+                            var index = Array.prototype.indexOf.call(this.tabtr, tar.parentNode.parentNode);
+                            this.index = index;
+                            this.userName.innerHTML = txt;
+                            this.del.innerHTML = "锁定"
+                            this.box.style.display = "block";
+                            this.bg.style.display = "block";
+                            this.copen = false;
+                        }
+                    },
+                    /*点击确认或者取消*/
+                    closeBox(flag) {
+                        var copen = this.copen,
+                            index = this.index;
+                        if (flag === 1 && copen == true) {
+                            this.tabtr[index].remove();
+                            this.hide();
+                        } else if (flag === 0 && copen == true) {
+                            this.hide();
+                        } else if (flag === 1 && copen == false) {
+                            this.tabtr[index].querySelectorAll("td")[9].querySelector(".swich").classList.add(
+                                "swich-on");
+                            this.hide();
+                        } else if (flag === 0 && copen == false) {
+                            this.tabtr[index].querySelectorAll("td")[9].querySelector(".swich").classList
+                                .remove("swich-on");
+                            this.hide();
+                        }
+                    },
+                    hide() {
+                        this.box.style.display = "none";
+                        this.bg.style.display = "none";
+                    }
+
+                }
+                new App().init();
+            }
+        </script>
+</body>
+
+</html>

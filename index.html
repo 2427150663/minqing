@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+    <style type="text/css">
+        #index h1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-bottom: 16px;
+            padding-top: 32px;
+        }
+
+        #index .top {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        #index.open .top .dat {
+            min-width: 297px;
+        }
+
+        #index .top .dat {
+            width:24%;
+            min-width: 262px;
+            height: 127px;
+            background: #ffffff;
+            -webkit-box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            border-radius: 2px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-left:2%;
+        }
+        #index .top .dat:nth-child(1){
+            margin-left:0%;
+        }
+        #index .top .dat .s1 {
+            font-size: 24px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+        }
+
+        #index .top .dat .s2 {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #606266;
+            padding-top: 26px;
+        }
+
+        #index .top .dat .right {
+            padding-left:20%;
+        }
+
+        #index .zhong {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-top: 24px;
+        }
+
+        #index.open .zhong .min {
+            min-width: 404px;
+        }
+
+        #index .zhong .min {
+            width: 36%;
+            min-width: 356.6666666666667px;
+            height: 390px;
+            background: #ffffff;
+            -webkit-box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+            border-radius: 2px;
+            margin-left: 2%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        #index .zhong .min:nth-child(1){
+            margin-left: 0%;
+        }
+        #index .zhong .min .top {
+            height: 52px;
+            line-height: 52px;
+            border-bottom: 1px solid #e4e7ed;
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #303133;
+            padding-left: 20px;
+        }
+
+        #index .zhong .min .bottom .quan {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 150px;
+            margin: auto;
+            margin-top: 68px;
+            position: relative;
+        }
+
+        #index .zhong .min .bottom span {
+            width: 140px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+            font-family: PingFangTC-Regular;
+            font-weight: 400;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #index .zhong .min .di {
+            font-size: 14px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: #606266;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        #index .top .dat:hover {
+            -webkit-box-shadow: 0px 20px 57px -27px #38b3ff;
+            box-shadow: 0px 20px 57px -27px #38b3ff;
+            cursor: pointer;
+        }
+
+        #conLeftTwo .tap:nth-child(1) .left {
+            border-left: 4px solid rgba(56, 179, 255, 1);
+        }
+
+        #conLeftTwo .tap:nth-child(1) .left img {
+            -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hello" style="position: relative;">
+        <nav>
+            <div class="con">
+                <div class="left">
+                    <img src="img/logo.png" width="101px" height="23px" class="tu1">
+                    <img src="img/menu002.png" width="20px" height="14px" class="tu2" id="open">
+                </div>
+                <div class="zhong">
+                    <span class="s1">康奈民情管理指挥系统</span>
+                    <span class="s2">——</span>
+                    <span class="s3">延安市互联网信息办公司</span>
+                </div>
+                <div class="right">
+                    <span class="s1">返回大厅</span>
+                    <span class="s2">|</span>
+                    <span class="s3">注销登录</span>
+                </div>
+            </div>
+        </nav>
+        <div id="con">
+            <div id="conLeft">
+                <div class="lie lie1">
+                    <div class="close bor" onclick="window.location.href='index.html'">
+                        <img src="img/home@2x.png">
+                        <span>首页</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie2">
+                        <div class="close">
+                            <img src="img/edit@2x.png">
+                            <span>走访管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='visit.html'">
+                                <span class="zflb">走访列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='plan.html'">
+                            <div class="zou">
+                                <span class="zflb">走访计划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie3">
+                    <div class="close" onclick="window.location.href='people.html'">
+                        <img src="img/user@2x.png">
+                        <span>民情管理</span>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie4">
+                        <div class="close">
+                            <img src="img/users@2x.png">
+                            <span>汇总统计</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie">
+                            <div class="zou" onclick="window.location.href='whole.html'">
+                                <span class="zflb">整体情况</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='statistical.html'">
+                            <div class="zou">
+                                <span class="zflb">民情统计</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='collect.html'">
+                            <div class="zou">
+                                <span class="zflb">机构采集排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='handle.html'">
+                            <div class="zou">
+                                <span class="zflb">机构办理排行</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='ofpeople.html'">
+                            <div class="zou">
+                                <span class="zflb">民情采集统计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="openTap tapChange">
+                    <div class="lie lie5">
+                        <div class="close">
+                            <img src="img/pie-chart@2x.png">
+                            <span>人员管理</span>
+                            <img src="img/bottom.png" class="tutu">
+                        </div>
+                    </div>
+                    <div class="chren">
+                        <div class="lie" onclick="window.location.href='pelist.html'">
+                            <div class="zou">
+                                <span class="zflb">人员列表</span>
+                            </div>
+                        </div>
+                        <div class="lie" onclick="window.location.href='activation.html'">
+                            <div class="zou ">
+                                <span class="zflb">激活码管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lie lie6" onclick="window.location.href='management.html'">
+                    <div class="close">
+                        <img src="img/layers@2x.png">
+                        <span>机构管理</span>
+                    </div>
+                </div>
+                <div class="lie lie7" onclick="window.location.href='set.html'">
+                    <div class="close">
+                        <img src="img/settings@2x.png">
+                        <span>设置</span>
+                    </div>
+                </div>
+            </div>
+            <div id="conLeftTwo">
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/home@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='index.html'">
+                        首页
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/edit@2x.png">
+                    </div>
+                    <div class="right">
+                        走访管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='visit.html'">
+                        走访列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='plan.html'">
+                        走访计划
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/user@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='people.html'">
+                        民情管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/users@2x.png">
+                    </div>
+                    <div class="right">
+                        汇总统计
+                    </div>
+                    <div class="right right1" onclick="window.location.href='whole.html'">
+                        整体情况
+                    </div>
+                    <div class="right right2" onclick="window.location.href='statistical.html'">
+                        民情统计
+                    </div>
+                    <div class="right right3" onclick="window.location.href='collect.html'">
+                        机构采集排行
+                    </div>
+                    <div class="right right4" onclick="window.location.href='handle.html'">
+                        机构办理排行
+                    </div>
+                    <div class="right right5" onclick="window.location.href='ofpeople.html'">
+                        民情采集统计
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/pie-chart@2x.png">
+                    </div>
+                    <div class="right">
+                        人员管理
+                    </div>
+                    <div class="right right1" onclick="window.location.href='pelist.html'">
+                        人员列表
+                    </div>
+                    <div class="right right2" onclick="window.location.href='activation.html'">
+                        激活码管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/layers@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='management.html'">
+                        机构管理
+                    </div>
+                </div>
+                <div class="tap">
+                    <div class="left">
+                        <img src="img/settings@2x.png">
+                    </div>
+                    <div class="right" onclick="window.location.href='set.html'">
+                        设置
+                    </div>
+                </div>
+            </div>
+            <div id="conRight">
+                <div id="index">
+                    <h1>整体情况</h1>
+                    <div class="top">
+                        <div class="dat">
+                            <div class="left">
+                                <span class="s1">315人</span><br />
+                                <span class="s2">走访人数</span>
+                            </div>
+                            <div class="right">
+                                <img src="img/分组 6@2x.png" width="72px" height="72px" />
+                            </div>
+                        </div>
+                        <div class="dat">
+                            <div class="left">
+                                <span class="s1">30所</span><br />
+                                <span class="s2">机构数量</span>
+                            </div>
+                            <div class="right">
+                                <img src="img/分组 11@2x.png" width="72px" height="72px" />
+                            </div>
+                        </div>
+                        <div class="dat">
+                            <div class="left">
+                                <span class="s1">5000条</span><br />
+                                <span class="s2">走访计划</span>
+                            </div>
+                            <div class="right">
+                                <img src="img/分组 9@2x.png" width="72px" height="72px" />
+                            </div>
+                        </div>
+                        <div class="dat">
+                            <div class="left">
+                                <span class="s1">5000条</span><br />
+                                <span class="s2">签到次数</span>
+                            </div>
+                            <div class="right">
+                                <img src="img/分组 12@2x.png" width="72px" height="72px" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zhong">
+                        <div class="min">
+                            <div class="top">
+                                采集民情
+                            </div>
+                            <div class="bottom" style="position: relative;">
+                                <div class="quan">
+                                </div>
+                                <span style="color:rgba(251,153,118,1)">5000条</span>
+                            </div>
+                            <div class="di">采集民情5000条</div>
+                        </div>
+                        <div class="min">
+                            <div class="top">
+                                民情办理
+                            </div>
+                            <div class="bottom" style="position: relative;">
+                                <div class="quan">
+                                </div>
+                                <span style="color:rgba(56,179,255,1)">4000条</span>
+                            </div>
+                            <div class="di">民情办理4000条</div>
+                        </div>
+                        <div class="min">
+                            <div class="top">
+                                民情未办结
+                            </div>
+                            <div class="bottom" style="position: relative;">
+                                <div class="quan">
+                                </div>
+                                <span style="color:rgba(56,179,255,1)">1000条</span>
+                            </div>
+                            <div class="di">民情未办结1000条</div>
+                        </div>
+                    </div>
+                    <h1>代办事项</h1>
+                    <div class="botm">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr class="tt">
+                                    <td>民情标题</td>
+                                    <td>领导批示</td>
+                                    <td>承办单位</td>
+                                    <td>上一操作事件</td>
+                                    <td>当前状态</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">
+                                        <a href="detailed.html">王义村群众吃水困难</a>
+                                    </td>
+                                    <td>请王木乡政府尽快办理</td>
+                                    <td>王木乡</td>
+                                    <td>2018-12-14 12:00</td>
+                                    <td class='t5'>待县领导审定</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">
+                                        <a href="detailed.html">王义村群众吃水困难</a>
+                                    </td>
+                                    <td>请王木乡政府尽快办理</td>
+                                    <td>王木乡</td>
+                                    <td>2018-12-14 12:00</td>
+                                    <td class='t5'>待下发至办理单位</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">
+                                        <a href="detailed.html">王义村群众吃水困难</a>
+                                    </td>
+                                    <td>请王木乡政府尽快办理</td>
+                                    <td>王木乡</td>
+                                    <td>2018-12-14 12:00</td>
+                                    <td class='t5'>待转办</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">
+                                        <a href="detailed.html">王义村群众吃水困难</a>
+                                    </td>
+                                    <td>请王木乡政府尽快办理</td>
+                                    <td>王木乡</td>
+                                    <td>2018-12-14 12:00</td>
+                                    <td class='t5 red'>正在办理</td>
+                                </tr>
+                                <tr>
+                                    <td class="t1">
+                                        <a href="detailed.html">王义村群众吃水困难</a>
+                                    </td>
+                                    <td>请王木乡政府尽快办理</td>
+                                    <td>王木乡</td>
+                                    <td>2018-12-14 12:00</td>
+                                    <td class='t5 red'>正在办理</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagebox">
+                            <div class="control">
+                                <input class="goto-page-input" placeholder="输入页码" type="text">
+                                <div class="btn goto-page-btn">跳至</div>
+                            </div>
+                            <div class="pagelist">
+                                <span class="desc">共有结果<font class="num">4</font>个,本页显示<font class="num">1</font>
+                                    个</span>
+                                <a href="/DepartmentList.aspx?act=s&page=1" class="lan">1</a>
+                                <a href="/DepartmentList.aspx?act=s&page=2">2</a>
+                                <a href="/DepartmentList.aspx?act=s&page=3">3</a>
+                                <a href="/DepartmentList.aspx?act=s&page=4">4</a>
+                                <a href="/DepartmentList.aspx?act=s&page=2">上一页</a>
+                                <a href="/DepartmentList.aspx?act=s&page=4">尾页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/Echarts.js"></script>
+    <script type="text/javascript">
+        /*采集民情5000条*/
+        drawLine(quan[0], 5000, 0, 'rgba(251,153,118,1)', 'rgba(248,192,105,1)');
+        /*民情办理4000条*/
+        drawLine(quan[1], 4000, 1000, 'rgba(56,179,255,1)', 'rgba(236,238,245,1)');
+        /*民情未办结1000条*/
+        drawLine(quan[2], 1000, 4000, 'rgba(251,153,118,1)', 'rgba(236,238,245,1)');
+    </script>
+</body>
+
+</html>
