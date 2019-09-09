@@ -1,0 +1,138 @@
+ 			/*表格样式*/
+
+ 			#index .botm table {
+				width: 100%;
+ 				min-width: 1118px;
+ 				background: #ffffff;
+ 				-webkit-box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+ 				box-shadow: 0px 1px 2px 1px rgba(221, 223, 230, 0.3);
+ 			}
+
+ 			#index.open .botm table {
+				width: 100%;
+ 				min-width: 1260px;
+ 			}
+
+ 			#index .botm table tr {
+ 				height: 58px;
+ 			}
+
+ 			#index.open .top .botm {
+				width: 100%;
+ 				min-width: 1260px;
+ 			}
+
+ 			#index.open .botm {
+ 				min-width: 1260px;
+ 			}
+
+ 			#index .botm table tr td {
+ 				padding-left: 30px;
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: #606266;
+ 			}
+
+ 			#index .botm table tr td a {
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: #38b3ff;
+ 			}
+
+ 			#index .botm table tr .t1 a {
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: #38b3ff;
+ 			}
+
+ 			#index .botm table .tt>td {
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: #303133;
+ 			}
+
+ 			#index .botm table tr:nth-child(odd) {
+ 				background: #f4fbff;
+ 			}
+
+ 			#index .botm table .bor {
+ 				border-left: 4px solid #38b3ff;
+ 				padding-left: 26px;
+ 			}
+
+ 			#index .botm table td.t5 {
+ 				color: #efb355;
+ 			}
+
+ 			#index .botm table td.red {
+ 				color: #ff768a;
+ 			}
+
+ 			#index .botm table .last .btn {
+ 				width: 62px;
+ 				height: 30px;
+ 				background: rgba(255, 118, 138, 1);
+ 				border-radius: 2px;
+ 				text-align: center;
+ 				line-height: 30px;
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: rgba(255, 255, 255, 1);
+ 				margin-right: 24px;
+ 			}
+
+ 			#index .botm table .last .btn1 {
+ 				background: rgba(56, 179, 255, 1)
+ 			}
+
+ 			/*表格按钮*/
+
+ 			.last {
+ 				display: -webkit-box;
+ 				display: -ms-flexbox;
+ 				display: flex;
+ 				padding-top: 14px;
+ 			}
+
+ 			.last .btn {
+ 				width: 62px;
+ 				height: 30px;
+ 				background: rgba(255, 118, 138, 1);
+ 				border-radius: 2px;
+ 				text-align: center;
+ 				line-height: 30px;
+ 				font-size: 14px;
+ 				font-family: PingFang-SC-Medium;
+ 				font-weight: 500;
+ 				color: rgba(255, 255, 255, 1);
+ 				margin-right: 24px;
+ 			}
+
+ 			.last .btn1 {
+ 				background: rgba(56, 179, 255, 1);
+ 			}
+
+ 			#index .botm table td.green {
+ 				color: rgba(0, 201, 162, 1);
+ 			}
+
+ 			#index .botm table td.no {
+ 				color: rgba(145, 147, 152, 1);
+ 			}
+
+ 			.btn {
+ 				-webkit-filter: brightness(100%);
+ 				filter: brightness(100%);
+ 				-webkit-transition: all 0.5s;
+ 				transition: all 0.5s;
+ 			}
+
+ 			.btn:hover {
+ 				-webkit-filter: brightness(120%);
+ 				filter: brightness(120%);
+ 			}

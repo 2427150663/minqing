@@ -1,0 +1,12 @@
+﻿/********************分页********************/
+.pagebox { height: 50px; margin-top: 20px; }
+.pagebox .control { float: right; }
+.pagebox .control .btn { float: left; width: 60px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ddd; cursor: pointer; }
+.pagebox .control input { float: left; width: 60px; height: 32px; line-height: 32px; margin-right: 10px; text-align: center; border: 1px solid #ddd; margin-left: 10px; }
+
+.pagebox .pagelist { float: right; }
+.pagelist { height: 32px; position: relative; }
+.pagelist .num { color: #337ab7; margin: 0 5px; }
+.pagelist a { display: block; float: left; margin-left: 5px; padding: 5px 16px; color: #000; text-decoration: none; text-align: center; border: 1px solid #ddd; cursor: pointer; }
+.pagelist a.lan { color: #fff; cursor: default; background-color: #337ab7; border-color: #337ab7; }
+.pagelist .desc { float: left; line-height: 33px; }
